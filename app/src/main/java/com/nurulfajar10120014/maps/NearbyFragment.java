@@ -96,9 +96,11 @@ public class NearbyFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 StringBuilder stringBuilder = new StringBuilder("https://api.tomtom.com/search/2/nearbySearch/.json?key=T8G9fLOXzrKoUIv5wMYMfei5FosyisAC&" +
-                        "lat="+lat+"&" +
-                        "lon="+lng+"&" +
-                        "categoryset=7315&" +
+                        "lat=" + lat + "&" +
+                        "lon=" + lng + "&" +
+                        "radius=10000&" +
+                        "view=Unified&" +
+                        "categorySet=7315&" +
                         "limit=5");
 
                 String url = stringBuilder.toString();
@@ -108,7 +110,7 @@ public class NearbyFragment extends Fragment {
 
                 FetchData fetchData = new FetchData();
                 fetchData.execute(dataFetch);
-                Log.d(TAG, "onClick: " + lat);
+                Log.d(TAG, "onClick: " + stringBuilder);
             }
         });
 
